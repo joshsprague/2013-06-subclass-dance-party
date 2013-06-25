@@ -34,3 +34,17 @@ Dancer.prototype.setPosition = function(top, left){
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body
+
+//I tried making another method for Dancer that would move on timeout
+//Couldn't get it to work, though
+Dancer.prototype.move = function(top, left) {
+  var styleSettings = {
+    top: top + 10,
+    left: left + 10
+  };
+  var that = this;
+  this.$node.css(styleSettings);
+    setTimeout(function(top, left){
+      that.move(top, left);
+    }, this.timeBetweenSteps);
+};
