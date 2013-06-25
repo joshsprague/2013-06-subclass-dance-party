@@ -5,6 +5,8 @@ var MakeBlinkyDancer = function(top, left, timeBetweenSteps){
 };
 
 var BlinkyDancer = function(top, left, timeBetweenSteps){
+  this.top = top;
+  this.left = left;
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('blinkyDancer');
   //Dancer.prototype.setPosition.call(this.top, this.left);
@@ -20,7 +22,9 @@ BlinkyDancer.prototype.step = function(){
   /* toggle() is a jQuery method to show/hide the <span> tag.
    * See http://api.jquery.com/category/effects/ for this and
    * other effects you can use on a jQuery-wrapped html tag. */
+
   this.$node.toggle();
+  this.$node.offset({top: this.top, left: this.left});
   Dancer.prototype.step.call(this);
 };
 
@@ -68,6 +72,8 @@ var MakeEmoDancer = function(top, left, timeBetweenSteps){
 };
 
 var EmoDancer = function(top, left, timeBetweenSteps){
+  this.top = top;
+  this.left = left;
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('emoDancer');
 
@@ -78,5 +84,11 @@ EmoDancer.prototype.constructor = EmoDancer;
 EmoDancer.prototype.step = function(){
   this.$node.fadeIn(3000);
   this.$node.fadeOut(3000);
+  this.$node.offset({top: this.top, left: this.left});
   Dancer.prototype.step.call(this);
 };
+
+// var lineUpButton = function(){
+//   for (var i = 0; i < window.dancers.length; i++)
+//   window.dancers[i].lineUp();
+// };

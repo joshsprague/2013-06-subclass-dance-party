@@ -8,6 +8,9 @@
     <script src="src/blinkyDancer.js"></script>
   </head>
   <body>
+    <audio autoplay="autoplay">
+      <source src="music.ogg" />  
+    </audio> 
 
     <div class="topbar">
       <span class="title">object dance party</span>
@@ -15,6 +18,7 @@
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeSalsaDancer">add a shakey dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeEmoDancer">add an emo dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeDancer">add a bystander</a>
+      <a href="#" class="lineUpButton">lineUp</a>
     </div>
 
     <script>
@@ -48,8 +52,17 @@
           );
 
           $('body').append(dancer.$node);
+
         });
+
+        $(".lineUpButton").on("click", function(event){
+          for (var i = 0; i < window.dancers.length; i++){
+            window.dancers[i].lineUp();
+          }
+        });
+
       });
+
     </script>
 
   </body>

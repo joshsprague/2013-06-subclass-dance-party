@@ -9,7 +9,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUpButton{
   padding:5px 12px;
   float:right;
 }
@@ -21,20 +21,26 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
+  height: 120px;
+  width: 100px;
+  background-size: 100px 120px;
+  background-image: url(http://img121.imageshack.us/img121/2307/amberlamps.png);
 }
 .blinkyDancer{
-  border:10px solid blue;
-  border-radius:10px;
-  position:absolute;
+  border:0;
+  border-radius:0;
+  height: 160px;
+  width: 128px;
+  background-size: 128px 160px;
+  background-image: url(http://images3.wikia.nocookie.net/__cb20110518215158/smashbrosbrawlcsps/images/d/da/Tron_guy.png);
 }
 .salsaDancer{
   border:0;
   border-radius:0;
   height:175px;
   width: 140px;
+  background-size: 140px 175px;
   background-image: url(http://www.mytinyphone.com/uploads/users/leech/sm2/406698.gif);
 }
 .emoDancer{
@@ -42,5 +48,6 @@ body, a:link, a:visited, a:active{
   border-radius:0;
   height: 80px;
   width: 85px;
+  background-size: 85px 80px;
   background-image: url(emo.png);
 }

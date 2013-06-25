@@ -9,6 +9,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.step();
   this.timeBetweenSteps = timeBetweenSteps;
   this.setPosition(top, left);
+  window.dancers.push(this);
 };
   // use jQuery to create an HTML <span> tag
 Dancer.prototype.step = function(){
@@ -16,6 +17,7 @@ Dancer.prototype.step = function(){
   // it just schedules the next step
   // this === dancer instance
   var that = this;
+  this.$node.offset({top: this.top, left: this.left});
   setTimeout(function(){
     that.step();
   }, this.timeBetweenSteps);
@@ -37,14 +39,6 @@ Dancer.prototype.setPosition = function(top, left){
 
 //I tried making another method for Dancer that would move on timeout
 //Couldn't get it to work, though
-/*Dancer.prototype.move = function(top, left) {
-  var styleSettings = {
-    top: top + 10,
-    left: left + 10
-  };
-  var that = this;
-  this.$node.css(styleSettings);
-    setTimeout(function(top, left){
-      that.move(top, left);
-    }, this.timeBetweenSteps);
-};*/
+Dancer.prototype.lineUp = function() {
+  this.left = 20;
+};
