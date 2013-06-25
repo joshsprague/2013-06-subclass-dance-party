@@ -15,9 +15,9 @@
     <div class="topbar">
       <span class="title">object dance party</span>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">add a blinky dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeSalsaDancer">add a shakey dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeFarleyDancer">add excellent dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeEmoDancer">add an emo dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeDancer">add a bystander</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeAmberDancer">add a bystander</a>
       <a href="#" class="lineUpButton">lineUp</a>
     </div>
 
@@ -59,6 +59,10 @@
           for (var i = 0; i < window.dancers.length; i++){
             window.dancers[i].lineUp();
           }
+        });
+
+        $(".amberDancer").on("click", function(event){
+          $(this).addClass(blinkyDancer); 
         });
 
       });

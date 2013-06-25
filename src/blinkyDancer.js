@@ -29,22 +29,22 @@ BlinkyDancer.prototype.step = function(){
 };
 
 //New Dancer
-var MakeSalsaDancer = function(top, left, timeBetweenSteps){
+var MakeFarleyDancer = function(top, left, timeBetweenSteps){
   //debugger;
-  return new SalsaDancer(top, left, timeBetweenSteps);
+  return new FarleyDancer(top, left, timeBetweenSteps);
 };
 
-var SalsaDancer = function(top, left, timeBetweenSteps){
+var FarleyDancer = function(top, left, timeBetweenSteps){
   this.top = top;
   this.left = left;
   this.direction = true;
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.addClass('salsaDancer');
+  this.$node.addClass('farleyDancer');
 
 };
-SalsaDancer.prototype = Object.create(Dancer.prototype);
-SalsaDancer.prototype.constructor = SalsaDancer;
-SalsaDancer.prototype.step = function(){
+FarleyDancer.prototype = Object.create(Dancer.prototype);
+FarleyDancer.prototype.constructor = FarleyDancer;
+FarleyDancer.prototype.step = function(){
   // this.$node.slideUp(100);
   // this.$node.slideDown(100);
 
@@ -84,6 +84,28 @@ EmoDancer.prototype.constructor = EmoDancer;
 EmoDancer.prototype.step = function(){
   this.$node.fadeIn(3000);
   this.$node.fadeOut(3000);
+  this.$node.offset({top: this.top, left: this.left});
+  Dancer.prototype.step.call(this);
+};
+
+var MakeAmberDancer = function(top, left, timeBetweenSteps){
+  return new AmberDancer(top, left, timeBetweenSteps);
+};  
+
+var AmberDancer = function(top, left, timeBetweenSteps){
+  this.top = top;
+  this.left = left;
+  Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('amberDancer');
+  $(".amberDancer").on("click", function(event){
+          $(this).css("background-image", "url(http://25.media.tumblr.com/8f2f3efcad2127a5b61ae682ce8c0132/tumblr_mf66d4IFpS1qjobs9o1_500.gif)");
+        });
+
+};
+
+AmberDancer.prototype = Object.create(Dancer.prototype);
+AmberDancer.prototype.constructor = AmberDancer;
+AmberDancer.prototype.step = function(){
   this.$node.offset({top: this.top, left: this.left});
   Dancer.prototype.step.call(this);
 };

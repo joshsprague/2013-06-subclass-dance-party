@@ -22,6 +22,8 @@ body, a:link, a:visited, a:active{
 }
 .dancer{
   position:absolute;
+}
+.amberDancer{
   height: 120px;
   width: 100px;
   background-size: 100px 120px;
@@ -35,7 +37,7 @@ body, a:link, a:visited, a:active{
   background-size: 128px 160px;
   background-image: url(http://images3.wikia.nocookie.net/__cb20110518215158/smashbrosbrawlcsps/images/d/da/Tron_guy.png);
 }
-.salsaDancer{
+.farleyDancer{
   border:0;
   border-radius:0;
   height:175px;
