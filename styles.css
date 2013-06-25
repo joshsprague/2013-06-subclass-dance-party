@@ -25,9 +25,22 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-
-.salsa{
+.blinkyDancer{
   border:10px solid blue;
   border-radius:10px;
   position:absolute;
+}
+.salsaDancer{
+  border:0;
+  border-radius:0;
+  height:175px;
+  width: 140px;
+  background-image: url(http://www.mytinyphone.com/uploads/users/leech/sm2/406698.gif);
+}
+.emoDancer{
+  border:0;
+  border-radius:0;
+  height: 80px;
+  width: 85px;
+  background-image: url(emo.png);
 }

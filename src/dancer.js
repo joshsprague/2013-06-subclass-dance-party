@@ -37,7 +37,7 @@ Dancer.prototype.setPosition = function(top, left){
 
 //I tried making another method for Dancer that would move on timeout
 //Couldn't get it to work, though
-Dancer.prototype.move = function(top, left) {
+/*Dancer.prototype.move = function(top, left) {
   var styleSettings = {
     top: top + 10,
     left: left + 10
@@ -47,4 +47,4 @@ Dancer.prototype.move = function(top, left) {
     setTimeout(function(top, left){
       that.move(top, left);
     }, this.timeBetweenSteps);
-};
+};*/
