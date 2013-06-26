@@ -54,10 +54,9 @@ body, a:link, a:visited, a:active{
   background-size: 85px 80px;
   background-image: url(emo.png);
 }
-
 .sweatPantsDancer{
   height: 150px;
   width: 125px;
   background-size: 125px 150px;
-  background-image: url(http://25.media.tumblr.com/8f2f3efcad2127a5b61ae682ce8c0132/tumblr_mf66d4IFpS1qjobs9o1_500.gif) !important;
+  background-image: url(http://25.media.tumblr.com/8f2f3efcad2127a5b61ae682ce8c0132/tumblr_mf66d4IFpS1qjobs9o1_500.gif);
 }
