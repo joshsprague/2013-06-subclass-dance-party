@@ -2,8 +2,9 @@ body, html{
   height:100%;
 }
 body{
-  margin: 0px;
-  background-color:#444;
+  margin: 0;
+  background-size: 2000px 1200px;
+  background-image: url(http://upload.wikimedia.org/wikipedia/commons/e/e0/Tenderloin_Street_Chess,_SF,_CA,_jjron_26.03.2012.jpg);
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -24,9 +25,9 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .amberDancer{
-  height: 120px;
-  width: 100px;
-  background-size: 100px 120px;
+  height: 150px;
+  width: 125px;
+  background-size: 125px 150px;
   background-image: url(http://img121.imageshack.us/img121/2307/amberlamps.png);
 }
 .blinkyDancer{
@@ -52,4 +53,11 @@ body, a:link, a:visited, a:active{
   width: 85px;
   background-size: 85px 80px;
   background-image: url(emo.png);
+}
+
+.sweatPantsDancer{
+  height: 150px;
+  width: 125px;
+  background-size: 125px 150px;
+  background-image: url(http://25.media.tumblr.com/8f2f3efcad2127a5b61ae682ce8c0132/tumblr_mf66d4IFpS1qjobs9o1_500.gif) !important;
 }

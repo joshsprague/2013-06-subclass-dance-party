@@ -48,7 +48,7 @@ FarleyDancer.prototype.step = function(){
   // this.$node.slideUp(100);
   // this.$node.slideDown(100);
 
-  if (this.top > 800 || this.left > 1000 || this.top < 100 || this.left < 100){
+  if (this.top > 800 || this.left > 1500 || this.top < 100 || this.left < 100){
     this.direction = !this.direction;
   }
   if (this.direction){
@@ -90,27 +90,34 @@ EmoDancer.prototype.step = function(){
 
 var MakeAmberDancer = function(top, left, timeBetweenSteps){
   return new AmberDancer(top, left, timeBetweenSteps);
-};  
+};
 
 var AmberDancer = function(top, left, timeBetweenSteps){
   this.top = top;
   this.left = left;
+  this.amber = true;
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('amberDancer');
   $(".amberDancer").on("click", function(event){
-          $(this).css("background-image", "url(http://25.media.tumblr.com/8f2f3efcad2127a5b61ae682ce8c0132/tumblr_mf66d4IFpS1qjobs9o1_500.gif)");
-        });
+    $(this).css("background-image", "url(http://25.media.tumblr.com/8f2f3efcad2127a5b61ae682ce8c0132/tumblr_mf66d4IFpS1qjobs9o1_500.gif)");
+  });
 
 };
 
 AmberDancer.prototype = Object.create(Dancer.prototype);
 AmberDancer.prototype.constructor = AmberDancer;
 AmberDancer.prototype.step = function(){
-  this.$node.offset({top: this.top, left: this.left});
+
+  var that = this;
+  for (var i = 0; i < window.dancers.length; i++){
+    if(that.top !== window.dancers[i].top){
+      if(window.dancers[i].amber === undefined){
+        if (Math.sqrt((that.left - window.dancers[i].left) * (that.left - window.dancers[i].left) + (that.top - window.dancers[i].top) * (that.top - window.dancers[i].top)) < 150) {
+          that.$node.addClass("sweatPantsDancer");
+          that.$node.removeClass("amberDancer");
+        }
+      }
+    }
+  }
   Dancer.prototype.step.call(this);
 };
-
-// var lineUpButton = function(){
-//   for (var i = 0; i < window.dancers.length; i++)
-//   window.dancers[i].lineUp();
-// };
